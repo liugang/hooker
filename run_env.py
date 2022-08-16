@@ -101,7 +101,7 @@ def getPythonLaucher():
     if not pythonLaucher:
         pythonLaucher = os.environ.get("_", "/usr/bin/python3")
     return pythonLaucher
-        
+
 
 xinitPyScript = "#! " + getPythonLaucher() + "\n\n" + readFile("xinitdeploy.py")
 disableSslPinningPyScript = "#! " + getPythonLaucher() + "\n\n" + readFile("disable_sslpinning.py")
@@ -119,4 +119,3 @@ def getRemoteDriver():
 def init(packageName):
     if packageName == None:
         return
-

@@ -33,7 +33,7 @@ do
 		echo "ex: Exit to the upper layer. eg:'ex'"
 		read -p ": " op
 		if [[ $op = ex ]] || [[ $op = exit ]]; then
-			break 
+			break
 		fi
 		if [[ $op = a ]] || [[ $op = b ]]; then
 			python3 hooker.py -p $package -$op true
