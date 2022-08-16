@@ -34,7 +34,7 @@ fi
 
 if [[ $abiType == arm64 ]]; then
 	echo "start frida-server"
-	nohup /data/mobile-deploy/hluda-server-14.2.13-android-arm64 -l 0.0.0.0:$firda_server_bind_port > /sdcard/frida-server.log 2>&1 &
+	nohup /data/mobile-deploy/hluda-server-15.2.2-android-arm64 -l 0.0.0.0:$firda_server_bind_port > /sdcard/frida-server.log 2>&1 &
 	
 	echo "alias tcpforward=/data/mobile-deploy/tcpforward_linux_arm64" >> /data/mobile-deploy/tools_env.rc
 	
@@ -46,7 +46,7 @@ if [[ $abiType == arm64 ]]; then
 	
 elif [[ $abiType == arm ]]; then
 	echo "start frida-server"
-	nohup /data/mobile-deploy/hluda-server-14.2.13-android-arm -l 0.0.0.0:$firda_server_bind_port > /sdcard/frida-server.log 2>&1 &
+	nohup /data/mobile-deploy/hluda-server-15.2.2-android-arm -l 0.0.0.0:$firda_server_bind_port > /sdcard/frida-server.log 2>&1 &
 	
 	echo "alias tcpforward=/data/mobile-deploy/tcpforward_linux_arm" >> /data/mobile-deploy/tools_env.rc
 	
@@ -57,7 +57,7 @@ elif [[ $abiType == arm ]]; then
 	echo "alias telnet='/data/mobile-deploy/busybox-armv7m telnet'" >> /data/mobile-deploy/tools_env.rc
 else
 	echo "start frida-server"
-	nohup /data/mobile-deploy/hluda-server-14.2.13-android-x86 -l 0.0.0.0:$firda_server_bind_port > /sdcard/frida-server.log 2>&1 &
+	nohup /data/mobile-deploy/hluda-server-15.2.2-android-x86 -l 0.0.0.0:$firda_server_bind_port > /sdcard/frida-server.log 2>&1 &
 	
 	echo "alias tcpforward=/data/mobile-deploy/tcpforward_linux_x86" >> /data/mobile-deploy/tools_env.rc
 	
