@@ -165,7 +165,7 @@ def createHookingEnverment(packageName, mainActivity):
         os.makedirs(packageName)
         os.makedirs(packageName+"/xinit")
         shellPrefix = "#!/bin/bash\nHOOKER_DRIVER=$(cat ../.hooker_driver)\n"
-        logHooking = shellPrefix + "echo \"hooking $1\" > log\ndate | tee -ai log\n" + "frida $HOOKER_DRIVER -l $1 " + packageName + " | tee -ai log"
+        logHooking = shellPrefix + "echo \"hooking $1\" > $1.log\ndate | tee -i $1.log\n" + "frida $HOOKER_DRIVER -l $1 " + packageName + " | tee -i $1.log"
         attach_shell = shellPrefix + "frida $HOOKER_DRIVER -l $1 " + packageName
         spawn_shell = f"{shellPrefix}\nfrida $HOOKER_DRIVER --no-pause -f {packageName} -l $1"
         xinitPyScript = run_env.xinitPyScript + "xinitDeploy('"+packageName+"')"
